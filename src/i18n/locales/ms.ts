@@ -1,0 +1,36 @@
+import { extendLocale } from './extendLocale'
+
+export const ms = extendLocale('ms', 'Bahasa Melayu', {
+  ui: {
+    headerTagline: 'Bandar Koshigaya, Saitama',
+    headerTitle: 'Panduan Asing Sampah',
+    headerDesc: 'Boleh bakar / tidak bakar / kitar semula',
+    tabGuide: 'Kategori',
+    tabWizard: 'Langkah',
+    tabPhoto: 'Foto',
+    tabSearch: 'Cari',
+    tabSheet: 'Carta',
+    tabOfficial: 'Rasmi',
+    searchPlaceholder: 'cth: botol PET, bateri, kotak',
+    disclaimer: 'Panduan rujukan tidak rasmi. Semak laman web rasmi Koshigaya.',
+    wizardTitle: 'Panduan langkah demi langkah',
+    wizardDesc: 'Jawab soalan untuk lihat semua langkah bersambung',
+    cheatsheetTitle: 'Carta ringkas',
+    putOutTime: 'Sebelum 8:00 pagi hari kutipan',
+  },
+  categories: {
+    burnable: { icon: '🔥', label: 'Sampah terbakar', shortLabel: 'Bakar', container: 'Beg lutsinar', examples: 'Sisa makanan, plastik', howTo: ['Beg lutsinar', 'Sebelum 8:00'] },
+    'non-burnable': { icon: '🪨', label: 'Sampah tidak terbakar', shortLabel: 'Tidak bakar', container: 'Bakul kuning', examples: 'Kaca, logam', howTo: ['Bakul kuning'] },
+    paper: { icon: '📰', label: 'Kertas', shortLabel: 'Kertas', container: 'Ikat tali', examples: 'Akhbar, kotak', howTo: ['Ikat mengikut jenis'] },
+    'pet-bottle': { icon: '🥤', label: 'Botol PET', shortLabel: 'PET', container: 'Bakul kuning', examples: 'Botol minuman jernih', howTo: ['Tanggalkan penutup, basuh'] },
+    cans: { icon: '🥫', label: 'Tin', shortLabel: 'Tin', container: 'Bakul kuning', examples: 'Tin makanan', howTo: ['Basuh bersih'] },
+    'glass-bottles': { icon: '🍾', label: 'Botol kaca', shortLabel: 'Botol', container: 'Bakul biru', examples: 'Botol minuman', howTo: ['Bakul biru'] },
+    clothing: { icon: '👕', label: 'Pakaian lama', shortLabel: 'Pakaian', container: 'Beg lutsinar', examples: 'Pakaian boleh guna semula', howTo: ['Basuh kering'] },
+    'white-tray': { icon: '🍱', label: 'Dulang putih', shortLabel: 'Dulang', container: 'Bakul kuning', examples: 'Dulang daging', howTo: ['Basuh kering'] },
+    hazardous: { icon: '☣️', label: 'Berbahaya', shortLabel: 'Bahaya', container: 'Bakul merah', examples: 'Sembur, bateri', howTo: ['Bakul merah'] },
+    bulky: { icon: '🛋️', label: 'Sampah besar', shortLabel: 'Besar', container: 'Tempahan', examples: '≥50cm atau ≥10kg', howTo: ['048-973-5300'] },
+    'not-collected': { icon: '🚫', label: 'Tidak dikutip', shortLabel: 'Tidak', container: 'Kitar semula khas', examples: 'Penghawa dingin, TV', howTo: ['Saluran khas'] },
+  },
+  wizard: { materialTitle: 'Bahan apa?', sizeTitle: 'Saiz?', resultTitle: 'Keputusan & langkah' },
+  official: { title: 'Maklumat rasmi Koshigaya', desc: 'Sentiasa semak peraturan terkini.', sanaruNote: 'Aplikasi ini ringkasan bebas.' },
+})

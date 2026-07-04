@@ -1,0 +1,36 @@
+import { extendLocale } from './extendLocale'
+
+export const de = extendLocale('de', 'Deutsch', {
+  ui: {
+    headerTagline: 'Stadt Koshigaya, Saitama',
+    headerTitle: 'Mülltrennung',
+    headerDesc: 'Brennbar / nicht brennbar / Recycling',
+    tabGuide: 'Kategorien',
+    tabWizard: 'Schritte',
+    tabPhoto: 'Foto',
+    tabSearch: 'Suche',
+    tabSheet: 'Tabelle',
+    tabOfficial: 'Offiziell',
+    searchPlaceholder: 'z.B. PET-Flasche, Batterie, Karton',
+    disclaimer: 'Inoffizieller Leitfaden. Bitte offizielle Website von Koshigaya prüfen.',
+    wizardTitle: 'Schritt-für-Schritt',
+    wizardDesc: 'Antworten zeigen alle Schritte zusammenhängend',
+    cheatsheetTitle: 'Übersicht',
+    putOutTime: 'Bis 8:00 Uhr am Abholtag',
+  },
+  categories: {
+    burnable: { icon: '🔥', label: 'Brennbarer Müll', shortLabel: 'Brennbar', container: 'Transparenter Beutel', examples: 'Essensreste, Plastik', howTo: ['Transparenter Beutel', 'Abtropfen', 'Vor 8:00'] },
+    'non-burnable': { icon: '🪨', label: 'Nicht brennbar', shortLabel: 'Nicht brennbar', container: 'Gelber Korb', examples: 'Glas, Metall', howTo: ['Gelber Korb'] },
+    paper: { icon: '📰', label: 'Papier', shortLabel: 'Papier', container: 'Mit Schnur binden', examples: 'Zeitung, Karton', howTo: ['Nach Art binden'] },
+    'pet-bottle': { icon: '🥤', label: 'PET-Flasche', shortLabel: 'PET', container: 'Gelber Korb', examples: 'Klare Flasche', howTo: ['Deckel ab, spülen'] },
+    cans: { icon: '🥫', label: 'Dosen', shortLabel: 'Dosen', container: 'Gelber Korb', examples: 'Getränkedosen', howTo: ['Spülen'] },
+    'glass-bottles': { icon: '🍾', label: 'Glasflaschen', shortLabel: 'Flaschen', container: 'Blauer Korb', examples: 'Getränkeflaschen', howTo: ['Blauer Korb'] },
+    clothing: { icon: '👕', label: 'Altkleider', shortLabel: 'Kleidung', container: 'Transparenter Beutel', examples: 'Wiederverwendbare Kleidung', howTo: ['Waschen und trocknen'] },
+    'white-tray': { icon: '🍱', label: 'Weiße Schale', shortLabel: 'Schale', container: 'Gelber Korb', examples: 'Fleischschale', howTo: ['Waschen und trocknen'] },
+    hazardous: { icon: '☣️', label: 'Gefährlich', shortLabel: 'Gefährlich', container: 'Roter Korb', examples: 'Spray, Batterien', howTo: ['Roter Korb'] },
+    bulky: { icon: '🛋️', label: 'Sperrmüll', shortLabel: 'Sperrmüll', container: 'Anmeldung', examples: '≥50cm oder ≥10kg', howTo: ['048-973-5300'] },
+    'not-collected': { icon: '🚫', label: 'Nicht abgeholt', shortLabel: 'Nicht abgeholt', container: 'Sonderrecycling', examples: 'Klimaanlage, TV', howTo: ['Sonderkanal'] },
+  },
+  wizard: { materialTitle: 'Welches Material?', sizeTitle: 'Größe?', resultTitle: 'Ergebnis & Schritte' },
+  official: { title: 'Offizielle Infos Koshigaya', desc: 'Immer aktuelle Regeln prüfen.', sanaruNote: 'Unabhängige Zusammenfassung.' },
+})

@@ -1,0 +1,36 @@
+import { extendLocale } from './extendLocale'
+
+export const it = extendLocale('it', 'Italiano', {
+  ui: {
+    headerTagline: 'Città di Koshigaya, Saitama',
+    headerTitle: 'Guida rifiuti',
+    headerDesc: 'Combustibile / non combustibile / riciclo',
+    tabGuide: 'Categorie',
+    tabWizard: 'Passi',
+    tabPhoto: 'Foto',
+    tabSearch: 'Cerca',
+    tabSheet: 'Tabella',
+    tabOfficial: 'Ufficiale',
+    searchPlaceholder: 'es: bottiglia PET, batteria, cartone',
+    disclaimer: 'Guida non ufficiale. Consultare il sito ufficiale di Koshigaya.',
+    wizardTitle: 'Guida passo passo',
+    wizardDesc: 'Rispondi per vedere tutti i passi insieme',
+    cheatsheetTitle: 'Tabella rapida',
+    putOutTime: 'Entro le 8:00 del giorno di raccolta',
+  },
+  categories: {
+    burnable: { icon: '🔥', label: 'Rifiuti combustibili', shortLabel: 'Combustibile', container: 'Sacco trasparente', examples: 'Avanzi, plastica', howTo: ['Sacco trasparente', 'Scolare', 'Entro le 8:00'] },
+    'non-burnable': { icon: '🪨', label: 'Non combustibile', shortLabel: 'Non combustibile', container: 'Cesto giallo', examples: 'Vetro, metallo', howTo: ['Cesto giallo'] },
+    paper: { icon: '📰', label: 'Carta', shortLabel: 'Carta', container: 'Legare con corda', examples: 'Giornale, cartone', howTo: ['Per tipo'] },
+    'pet-bottle': { icon: '🥤', label: 'Bottiglia PET', shortLabel: 'PET', container: 'Cesto giallo', examples: 'Bottiglia trasparente', howTo: ['Togliere tappo, sciacquare'] },
+    cans: { icon: '🥫', label: 'Lattine', shortLabel: 'Lattine', container: 'Cesto giallo', examples: 'Lattine bevande', howTo: ['Sciacquare'] },
+    'glass-bottles': { icon: '🍾', label: 'Bottiglie di vetro', shortLabel: 'Bottiglie', container: 'Cesto blu', examples: 'Bottiglie bevande', howTo: ['Cesto blu'] },
+    clothing: { icon: '👕', label: 'Vestiti usati', shortLabel: 'Vestiti', container: 'Sacco trasparente', examples: 'Vestiti riutilizzabili', howTo: ['Lavare e asciugare'] },
+    'white-tray': { icon: '🍱', label: 'Vaschetta bianca', shortLabel: 'Vaschetta', container: 'Cesto giallo', examples: 'Vaschetta carne', howTo: ['Lavare e asciugare'] },
+    hazardous: { icon: '☣️', label: 'Pericoloso', shortLabel: 'Pericoloso', container: 'Cesto rosso', examples: 'Spray, batterie', howTo: ['Cesto rosso'] },
+    bulky: { icon: '🛋️', label: 'Ingombranti', shortLabel: 'Ingombranti', container: 'Prenotazione', examples: '≥50cm o ≥10kg', howTo: ['048-973-5300'] },
+    'not-collected': { icon: '🚫', label: 'Non raccolto', shortLabel: 'Non raccolto', container: 'Riciclo speciale', examples: 'Condizionatore, TV', howTo: ['Canale speciale'] },
+  },
+  wizard: { materialTitle: 'Che materiale?', sizeTitle: 'Dimensione?', resultTitle: 'Risultato e passi' },
+  official: { title: 'Info ufficiali Koshigaya', desc: 'Verificare sempre le regole attuali.', sanaruNote: 'Riassunto indipendente.' },
+})

@@ -1,0 +1,36 @@
+import { extendLocale } from './extendLocale'
+
+export const fr = extendLocale('fr', 'Français', {
+  ui: {
+    headerTagline: 'Ville de Koshigaya, Saitama',
+    headerTitle: 'Guide des déchets',
+    headerDesc: 'Combustible / non combustible / recyclage',
+    tabGuide: 'Catégories',
+    tabWizard: 'Étapes',
+    tabPhoto: 'Photo',
+    tabSearch: 'Recherche',
+    tabSheet: 'Tableau',
+    tabOfficial: 'Officiel',
+    searchPlaceholder: 'ex: bouteille PET, pile, carton',
+    disclaimer: 'Guide non officiel. Consultez le site officiel de Koshigaya.',
+    wizardTitle: 'Guide étape par étape',
+    wizardDesc: 'Répondez pour voir toutes les étapes ensemble',
+    cheatsheetTitle: 'Tableau rapide',
+    putOutTime: 'Avant 8h le jour de collecte',
+  },
+  categories: {
+    burnable: { icon: '🔥', label: 'Déchets combustibles', shortLabel: 'Combustible', container: 'Sac transparent', examples: 'Restes, plastique', howTo: ['Sac transparent', 'Égoutter', 'Avant 8h'] },
+    'non-burnable': { icon: '🪨', label: 'Non combustible', shortLabel: 'Non combustible', container: 'Panier jaune', examples: 'Verre, métal', howTo: ['Panier jaune'] },
+    paper: { icon: '📰', label: 'Papier', shortLabel: 'Papier', container: 'Attacher avec corde', examples: 'Journal, carton', howTo: ['Par type'] },
+    'pet-bottle': { icon: '🥤', label: 'Bouteille PET', shortLabel: 'PET', container: 'Panier jaune', examples: 'Bouteille transparente', howTo: ['Retirer bouchon, rincer'] },
+    cans: { icon: '🥫', label: 'Boîtes', shortLabel: 'Boîtes', container: 'Panier jaune', examples: 'Boîtes de conserve', howTo: ['Rincer'] },
+    'glass-bottles': { icon: '🍾', label: 'Bouteilles en verre', shortLabel: 'Bouteilles', container: 'Panier bleu', examples: 'Bouteilles de boisson', howTo: ['Panier bleu'] },
+    clothing: { icon: '👕', label: 'Vêtements usagés', shortLabel: 'Vêtements', container: 'Sac transparent', examples: 'Vêtements réutilisables', howTo: ['Laver et sécher'] },
+    'white-tray': { icon: '🍱', label: 'Barquette blanche', shortLabel: 'Barquette', container: 'Panier jaune', examples: 'Barquette viande', howTo: ['Laver et sécher'] },
+    hazardous: { icon: '☣️', label: 'Dangereux', shortLabel: 'Dangereux', container: 'Panier rouge', examples: 'Spray, piles', howTo: ['Panier rouge'] },
+    bulky: { icon: '🛋️', label: 'Encombrants', shortLabel: 'Encombrants', container: 'Réservation', examples: '≥50cm ou ≥10kg', howTo: ['048-973-5300'] },
+    'not-collected': { icon: '🚫', label: 'Non collecté', shortLabel: 'Non collecté', container: 'Recyclage spécial', examples: 'Climatiseur, TV', howTo: ['Canal spécial'] },
+  },
+  wizard: { materialTitle: 'Quel matériau?', sizeTitle: 'Taille?', resultTitle: 'Résultat et étapes' },
+  official: { title: 'Info officielle Koshigaya', desc: 'Vérifiez toujours les règles actuelles.', sanaruNote: 'Résumé indépendant.' },
+})

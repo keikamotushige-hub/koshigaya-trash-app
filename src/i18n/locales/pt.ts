@@ -1,0 +1,36 @@
+import { extendLocale } from './extendLocale'
+
+export const pt = extendLocale('pt', 'Português', {
+  ui: {
+    headerTagline: 'Cidade de Koshigaya, Saitama',
+    headerTitle: 'Guia de lixo',
+    headerDesc: 'Combustível / não combustível / reciclagem',
+    tabGuide: 'Categorias',
+    tabWizard: 'Passos',
+    tabPhoto: 'Foto',
+    tabSearch: 'Buscar',
+    tabSheet: 'Tabela',
+    tabOfficial: 'Oficial',
+    searchPlaceholder: 'ex: garrafa PET, pilha, papelão',
+    disclaimer: 'Guia não oficial. Consulte o site oficial de Koshigaya.',
+    wizardTitle: 'Guia passo a passo',
+    wizardDesc: 'Responda para ver todos os passos juntos',
+    cheatsheetTitle: 'Tabela rápida',
+    putOutTime: 'Antes das 8:00 no dia da coleta',
+  },
+  categories: {
+    burnable: { icon: '🔥', label: 'Lixo combustível', shortLabel: 'Combustível', container: 'Saco transparente', examples: 'Restos, plástico', howTo: ['Saco transparente', 'Escorrer', 'Antes das 8:00'] },
+    'non-burnable': { icon: '🪨', label: 'Não combustível', shortLabel: 'Não combustível', container: 'Cesto amarelo', examples: 'Vidro, metal', howTo: ['Cesto amarelo'] },
+    paper: { icon: '📰', label: 'Papel', shortLabel: 'Papel', container: 'Amarrar com corda', examples: 'Jornal, papelão', howTo: ['Separar por tipo'] },
+    'pet-bottle': { icon: '🥤', label: 'Garrafa PET', shortLabel: 'PET', container: 'Cesto amarelo', examples: 'Garrafa transparente', howTo: ['Tirar tampa, enxaguar'] },
+    cans: { icon: '🥫', label: 'Latas', shortLabel: 'Latas', container: 'Cesto amarelo', examples: 'Latas de bebida', howTo: ['Enxaguar'] },
+    'glass-bottles': { icon: '🍾', label: 'Garrafas de vidro', shortLabel: 'Garrafas', container: 'Cesto azul', examples: 'Garrafas de bebida', howTo: ['Cesto azul'] },
+    clothing: { icon: '👕', label: 'Roupas usadas', shortLabel: 'Roupas', container: 'Saco transparente', examples: 'Roupas reutilizáveis', howTo: ['Lavar e secar'] },
+    'white-tray': { icon: '🍱', label: 'Bandeja branca', shortLabel: 'Bandeja', container: 'Cesto amarelo', examples: 'Bandeja de carne', howTo: ['Lavar e secar'] },
+    hazardous: { icon: '☣️', label: 'Perigoso', shortLabel: 'Perigoso', container: 'Cesto vermelho', examples: 'Spray, pilhas', howTo: ['Cesto vermelho'] },
+    bulky: { icon: '🛋️', label: 'Lixo volumoso', shortLabel: 'Volumoso', container: 'Reserva', examples: '≥50cm ou ≥10kg', howTo: ['048-973-5300'] },
+    'not-collected': { icon: '🚫', label: 'Não coletado', shortLabel: 'Não coletado', container: 'Reciclagem especial', examples: 'Ar-condicionado, TV', howTo: ['Canal especial'] },
+  },
+  wizard: { materialTitle: 'Qual material?', sizeTitle: 'Tamanho?', resultTitle: 'Resultado e passos' },
+  official: { title: 'Info oficial Koshigaya', desc: 'Verifique sempre as regras atuais.', sanaruNote: 'App de resumo independente.' },
+})

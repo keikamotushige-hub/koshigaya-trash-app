@@ -1,0 +1,37 @@
+import { extendLocale } from './extendLocale'
+
+export const vi = extendLocale('vi', 'Tiếng Việt', {
+  ui: {
+    headerTagline: 'Thành phố Koshigaya, Saitama',
+    headerTitle: 'Hướng dẫn phân loại rác',
+    headerDesc: 'Rác cháy / không cháy / tái chế',
+    tabGuide: 'Loại',
+    tabWizard: 'Bước',
+    tabPhoto: 'Ảnh',
+    tabSearch: 'Tìm',
+    tabSheet: 'Bảng',
+    tabOfficial: 'Chính thức',
+    searchPlaceholder: 'vd: chai PET, pin, thùng carton',
+    disclaimer: 'Hướng dẫn tham khảo không chính thức. Vui lòng xem website thành phố Koshigaya.',
+    photoTitle: 'Kiểm tra bằng ảnh',
+    wizardTitle: 'Hướng dẫn từng bước',
+    wizardDesc: 'Trả lời câu hỏi để xem các bước liên tục',
+    cheatsheetTitle: 'Bảng tóm tắt',
+    putOutTime: 'Trước 8:00 sáng ngày thu gom',
+  },
+  categories: {
+    burnable: { icon: '🔥', label: 'Rác cháy được', shortLabel: 'Cháy được', container: 'Túi trong/s半 trong', examples: 'Thức ăn thừa, nhựa, xốp', howTo: ['Túi trong', 'Lọc nước', 'Trước 8:00'] },
+    'non-burnable': { icon: '🪨', label: 'Rác không cháy', shortLabel: 'Không cháy', container: 'Rổ vàng', examples: 'Thủy tinh, kim loại, gốm', howTo: ['Rổ vàng', 'Bọc vật sắc'] },
+    paper: { icon: '📰', label: 'Giấy', shortLabel: 'Giấy', container: 'Buộc dây', examples: 'Báo, hộp carton', howTo: ['Buộc theo loại'] },
+    'pet-bottle': { icon: '🥤', label: 'Chai PET', shortLabel: 'PET', container: 'Rổ vàng', examples: 'Chai trong suốt', howTo: ['Tháo nắp, rửa, ép'] },
+    cans: { icon: '🥫', label: 'Lon', shortLabel: 'Lon', container: 'Rổ vàng', examples: 'Lon đồ uống', howTo: ['Rửa sạch'] },
+    'glass-bottles': { icon: '🍾', label: 'Chai thủy tinh', shortLabel: 'Chai', container: 'Rổ xanh', examples: 'Chai đồ uống', howTo: ['Rửa, rổ xanh'] },
+    clothing: { icon: '👕', label: 'Quần áo cũ', shortLabel: 'Quần áo', container: 'Túi trong', examples: 'Quần áo tái sử dụng', howTo: ['Giặt khô, không ngày mưa'] },
+    'white-tray': { icon: '🍱', label: 'Khay trắng', shortLabel: 'Khay trắng', container: 'Rổ vàng', examples: 'Khay đựng thịt', howTo: ['Rửa khô'] },
+    hazardous: { icon: '☣️', label: 'Rác nguy hại', shortLabel: 'Nguy hại', container: 'Rổ đỏ', examples: 'Bình xịt, pin', howTo: ['Rổ đỏ'] },
+    bulky: { icon: '🛋️', label: 'Rác cồng kềnh', shortLabel: 'Cồng kềnh', container: 'Đặt trước', examples: '≥50cm hoặc ≥10kg', howTo: ['Gọi 048-973-5300'] },
+    'not-collected': { icon: '🚫', label: 'Không thu gom', shortLabel: 'Không thu', container: 'Thu hồi đặc biệt', examples: 'Máy lạnh, TV, PC', howTo: ['Kênh thu hồi riêng'] },
+  },
+  wizard: { materialTitle: 'Chất liệu gì?', sizeTitle: 'Kích thước?', resultTitle: 'Kết quả và các bước' },
+  official: { title: 'Thông tin chính thức Koshigaya', desc: 'Luôn kiểm tra quy định mới nhất trên web.', sanaruNote: 'Thành phố có PDF tiếng Việt. Ứng dụng này là bản tóm tắt độc lập.' },
+})
