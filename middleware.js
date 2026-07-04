@@ -1,4 +1,5 @@
 const REALM = 'Koshigaya Trash Guide — Owner Only'
+const OWNER_EMAIL = 'keikamotushige@gmail.com'
 
 function unauthorized() {
   return new Response('Authentication required. This site is private.', {
@@ -9,10 +10,11 @@ function unauthorized() {
   })
 }
 
-export default function middleware(request: Request) {
+/** @param {Request} request */
+export default function middleware(request) {
   const expected = process.env.SITE_PASSWORD
   if (!expected) {
-    return new Response('Site password is not configured.', { status: 503 })
+    return new Response('This site is private. Waiting for owner password setup.', { status: 503 })
   }
 
   const auth = request.headers.get('authorization')
@@ -22,7 +24,7 @@ export default function middleware(request: Request) {
       const colon = decoded.indexOf(':')
       const user = colon >= 0 ? decoded.slice(0, colon) : decoded
       const pass = colon >= 0 ? decoded.slice(colon + 1) : ''
-      if (user === 'owner' && pass === expected) return
+      if (user.toLowerCase() === OWNER_EMAIL && pass === expected) return
     } catch {
       /* invalid base64 */
     }

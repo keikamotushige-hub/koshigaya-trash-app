@@ -1,6 +1,7 @@
 import { useEffect, useState, type FormEvent, type ReactNode } from 'react'
 
 const STORAGE_KEY = 'koshigaya-owner-auth-v1'
+const OWNER_EMAIL = 'keikamotushige@gmail.com'
 
 function getExpectedPassword() {
   return import.meta.env.VITE_OWNER_PASSWORD as string | undefined
@@ -9,13 +10,14 @@ function getExpectedPassword() {
 export function AuthGate({ children }: { children: ReactNode }) {
   const expected = getExpectedPassword()
   const [authed, setAuthed] = useState(false)
+  const [email, setEmail] = useState(OWNER_EMAIL)
   const [input, setInput] = useState('')
   const [error, setError] = useState(false)
 
   useEffect(() => {
     if (!expected) return
     try {
-      if (sessionStorage.getItem(STORAGE_KEY) === expected) setAuthed(true)
+      if (sessionStorage.getItem(STORAGE_KEY) === `${OWNER_EMAIL}:${expected}`) setAuthed(true)
     } catch {
       /* ignore */
     }
@@ -24,9 +26,10 @@ export function AuthGate({ children }: { children: ReactNode }) {
   if (!expected) {
     return (
       <div className="min-h-dvh flex items-center justify-center p-6 bg-slate-100">
-        <p className="text-sm text-slate-600 text-center max-w-sm">
-          Owner password is not configured. Set <code className="text-xs">VITE_OWNER_PASSWORD</code> in Vercel
-          environment variables, then redeploy.
+        <p className="text-sm text-slate-600 text-center max-w-sm leading-relaxed">
+          🔒 このサイトは非公開です。オーナー用パスワードの設定待ちです。
+          <br />
+          <span className="text-xs text-slate-400 mt-2 block">一般公開は停止されています。</span>
         </p>
       </div>
     )
@@ -36,9 +39,10 @@ export function AuthGate({ children }: { children: ReactNode }) {
 
   const submit = (e: FormEvent) => {
     e.preventDefault()
-    if (input === expected) {
+    const emailOk = email.trim().toLowerCase() === OWNER_EMAIL
+    if (emailOk && input === expected) {
       try {
-        sessionStorage.setItem(STORAGE_KEY, expected)
+        sessionStorage.setItem(STORAGE_KEY, `${OWNER_EMAIL}:${expected}`)
       } catch {
         /* ignore */
       }
@@ -57,9 +61,17 @@ export function AuthGate({ children }: { children: ReactNode }) {
       >
         <div className="text-center">
           <p className="text-3xl mb-2">🔒</p>
-          <h1 className="text-lg font-bold text-slate-900">Private — Owner Only</h1>
-          <p className="text-sm text-slate-500 mt-1">Enter your password to open this guide.</p>
+          <h1 className="text-lg font-bold text-slate-900">非公開 — オーナー専用</h1>
+          <p className="text-sm text-slate-500 mt-1">登録メールとパスワードで開きます</p>
         </div>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
+          autoComplete="username"
+          className="w-full rounded-xl border border-sky-200 px-4 py-3 text-base min-h-[48px]"
+        />
         <input
           type="password"
           value={input}
@@ -68,12 +80,12 @@ export function AuthGate({ children }: { children: ReactNode }) {
           autoComplete="current-password"
           className="w-full rounded-xl border border-sky-200 px-4 py-3 text-base min-h-[48px]"
         />
-        {error && <p className="text-sm text-red-600">Incorrect password.</p>}
+        {error && <p className="text-sm text-red-600">メールまたはパスワードが違います。</p>}
         <button
           type="submit"
           className="w-full rounded-xl bg-sky-700 text-white font-bold py-3 min-h-[48px] active:scale-[0.98]"
         >
-          Unlock
+          ログイン
         </button>
       </form>
     </div>
