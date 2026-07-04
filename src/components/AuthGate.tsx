@@ -27,9 +27,7 @@ export function AuthGate({ children }: { children: ReactNode }) {
     return (
       <div className="min-h-dvh flex items-center justify-center p-6 bg-slate-100">
         <p className="text-sm text-slate-600 text-center max-w-sm leading-relaxed">
-          🔒 このサイトは非公開です。オーナー用パスワードの設定待ちです。
-          <br />
-          <span className="text-xs text-slate-400 mt-2 block">一般公開は停止されています。</span>
+          🔒 このサイトは非公開です。設定を確認中です。
         </p>
       </div>
     )
@@ -61,32 +59,42 @@ export function AuthGate({ children }: { children: ReactNode }) {
       >
         <div className="text-center">
           <p className="text-3xl mb-2">🔒</p>
-          <h1 className="text-lg font-bold text-slate-900">非公開 — オーナー専用</h1>
-          <p className="text-sm text-slate-500 mt-1">登録メールとパスワードで開きます</p>
+          <h1 className="text-lg font-bold text-slate-900">越谷ごみ分別ガイド</h1>
+          <p className="text-sm text-slate-500 mt-1">オーナー専用 — メールとパスワードでログイン</p>
         </div>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email"
-          autoComplete="username"
-          className="w-full rounded-xl border border-sky-200 px-4 py-3 text-base min-h-[48px]"
-        />
-        <input
-          type="password"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Password"
-          autoComplete="current-password"
-          className="w-full rounded-xl border border-sky-200 px-4 py-3 text-base min-h-[48px]"
-        />
-        {error && <p className="text-sm text-red-600">メールまたはパスワードが違います。</p>}
+        <label className="block">
+          <span className="text-xs font-bold text-slate-500 mb-1 block">メール</span>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            autoComplete="username"
+            className="w-full rounded-xl border border-sky-200 px-4 py-3 text-base min-h-[48px]"
+          />
+        </label>
+        <label className="block">
+          <span className="text-xs font-bold text-slate-500 mb-1 block">パスワード</span>
+          <input
+            type="password"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="パスワード"
+            autoComplete="current-password"
+            className="w-full rounded-xl border border-sky-200 px-4 py-3 text-base min-h-[48px]"
+          />
+        </label>
+        {error && (
+          <p className="text-sm text-red-600">メールまたはパスワードが違います。もう一度お試しください。</p>
+        )}
         <button
           type="submit"
           className="w-full rounded-xl bg-sky-700 text-white font-bold py-3 min-h-[48px] active:scale-[0.98]"
         >
-          ログイン
+          ログインして開く
         </button>
+        <p className="text-xs text-slate-400 text-center leading-relaxed">
+          一般公開は停止しています。この画面が表示されれば正常です。
+        </p>
       </form>
     </div>
   )
